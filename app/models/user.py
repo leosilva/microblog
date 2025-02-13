@@ -6,6 +6,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from app import login
 from hashlib import md5
+from datetime import timezone, datetime
 
 
 class User(UserMixin, db.Model):
@@ -14,6 +15,8 @@ class User(UserMixin, db.Model):
     email: so.Mapped[str] = so.mapped_column(sa.String(64), index=True, unique=True)
     password_hash: so.Mapped[Optional[str]] = so.mapped_column(sa.String(256))
     posts: so.WriteOnlyMapped['Post'] = so.relationship(back_populates='author')
+    about_me: so.Mapped[str] = so.mapped_column(sa.String(140))
+    last_seen: so.Mapped[Optional[datetime]] = so.mapped_column(sa.DateTime, default=datetime.now(timezone.utc))
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
