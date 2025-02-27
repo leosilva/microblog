@@ -6,7 +6,6 @@ from app import app, db
 from app.forms import LoginForm, PostForm
 from flask_login import login_user, logout_user, current_user, login_required
 import sqlalchemy as sa
-
 from app.forms.edit_profile_form import EditProfileForm
 from app.forms.empty_form import EmptyForm
 from app.forms.registration_form import RegistrationForm
@@ -16,6 +15,7 @@ from app.models import User, Post
 from urllib.parse import urlparse
 from app.email import send_password_reset_email
 from flask_babel import _, get_locale
+from langdetect import detect, LangDetectException
 
 
 @app.before_request
@@ -32,7 +32,11 @@ def before_request():
 def index():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(body=form.post.data, author=current_user)
+        try:
+            language = detect(form.post.data)
+        except LangDetectException:
+            language = ''
+        post = Post(body=form.post.data, author=current_user, language=language)
         db.session.add(post)
         db.session.commit()
         flash(_('Your post is now live!'))
