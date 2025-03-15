@@ -2,7 +2,7 @@ from datetime import datetime, timezone
 from functools import reduce
 
 from flask import render_template, flash, redirect, url_for, request, g
-from app import app, db
+from app import app, db, translate
 from app.forms import LoginForm, PostForm
 from flask_login import login_user, logout_user, current_user, login_required
 import sqlalchemy as sa
@@ -192,3 +192,11 @@ def reset_password(token):
         flash(_('Your password has been reset.'))
         return redirect(url_for('login'))
     return render_template('reset_password.html', form=form)
+
+
+@app.route('/translate', methods=['POST'])
+@login_required
+def translate_text():
+    data = request.get_json()
+    return {'text': translate.translate(data['text'],
+                                        data['source_language'], data['dest_language'])}

@@ -23,7 +23,7 @@ endpoints_url = 'https://raw.githubusercontent.com/Uncover-F/TAS/Uncover/.data/e
 params = {
     'text': 'Tell me a joke about Cloudflare',  # Text to translate
     'source_lang': 'en',  # Source language code
-    'target_lang': 'pt_BR'   # Target language code
+    'target_lang': 'pt'   # Target language code
 }
 
 # Function to send GET request to an endpoint
