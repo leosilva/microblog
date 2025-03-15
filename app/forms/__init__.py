@@ -1,3 +1,2 @@
-from .login_form import LoginForm
-from .post_form import PostForm
-from .reset_password_request_form import ResetPasswordRequestForm
+from app.forms.auth import LoginForm
+from app.forms.main.post_form import PostForm

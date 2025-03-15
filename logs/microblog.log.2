@@ -1,87 +1,4 @@
-2025-02-17 11:05:37,487 ERROR: Exception on /user/leo [GET] [in /Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py:875])]
-Traceback (most recent call last):
-  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/leosilva/development/microblog/app/routes.py", line 89, in user
-    return render_template('user.html', user=user, posts=posts, form=form)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/templating.py", line 149, in render_template
-    template = app.jinja_env.get_or_select_template(template_name_or_list)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/jinja2/environment.py", line 1016, in get_template
-    return self._load_template(name, globals)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/jinja2/environment.py", line 975, in _load_template
-    template = self.loader.load(self, name, self.make_globals(globals))
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/jinja2/loaders.py", line 138, in load
-    code = environment.compile(source, name, filename)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/jinja2/environment.py", line 771, in compile
-    self.handle_exception(source=source_hint)
-  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/jinja2/environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/Users/leosilva/development/microblog/app/templates/user.html", line 15, in template
-    {% elif not current_user.is_following(user) %}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'elif'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
-2025-02-17 11:06:38,171 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:44])]
-2025-02-17 11:06:38,739 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:44])]
-2025-02-22 16:31:09,961 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:47])]
-2025-02-22 16:31:37,202 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:47])]
-2025-02-22 16:31:37,784 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:47])]
-2025-03-15 11:36:36,578 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
-2025-03-15 11:48:26,543 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
-2025-03-15 11:48:27,253 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
-2025-03-15 11:51:19,305 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
-2025-03-15 11:51:41,020 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
-2025-03-15 11:52:21,351 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
-2025-03-15 11:52:36,309 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
-2025-03-15 11:52:53,658 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
-2025-03-15 11:55:27,145 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
-2025-03-15 11:55:36,281 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
-2025-03-15 11:55:50,140 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
-2025-03-15 12:30:36,444 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
-2025-03-15 12:30:37,302 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
-2025-03-15 12:30:43,689 ERROR: Exception on /translate [POST] [in /Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py:875])]
-Traceback (most recent call last):
-  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/leosilva/development/microblog/app/routes.py", line 201, in translate_text
-    return {'text': translate.translate(data['text'],
-                                        ~~~~^^^^^^^^
-KeyError: 'text'
-2025-03-15 12:31:55,482 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
-2025-03-15 12:31:59,558 ERROR: Exception on /translate [POST] [in /Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py:875])]
+2025-03-15 12:33:19,750 ERROR: Exception on /translate [POST] [in /Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py:875])]
 Traceback (most recent call last):
   File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -102,3 +19,102 @@ Traceback (most recent call last):
     return {'text': translate.translate(data['text'],
                                         ~~~~^^^^^^^^
 KeyError: 'text'
+2025-03-15 12:35:16,288 ERROR: Exception on /translate [POST] [in /Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py:875])]
+Traceback (most recent call last):
+  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/app/routes.py", line 202, in translate_text
+    return {'text': translate.translate(data['text'],
+                                        ~~~~^^^^^^^^
+KeyError: 'text'
+2025-03-15 12:35:51,260 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
+2025-03-15 12:35:52,032 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
+2025-03-15 12:35:59,448 ERROR: Exception on /translate [POST] [in /Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py:875])]
+Traceback (most recent call last):
+  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/app/routes.py", line 203, in translate_text
+    data['source_language'], data['target_language'])}
+                             ~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'target_language'
+2025-03-15 12:37:49,735 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
+2025-03-15 12:37:50,609 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
+2025-03-15 12:37:59,462 ERROR: Exception on /translate [POST] [in /Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py:875])]
+Traceback (most recent call last):
+  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/app/routes.py", line 202, in translate_text
+    return {'text': translate.translate(data['text'],
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/app/translate.py", line 51, in translate
+    return result.json()['response'][0]['translatedText']
+           ^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'json'
+2025-03-15 12:38:37,159 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
+2025-03-15 12:38:37,936 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
+2025-03-15 12:38:56,309 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
+2025-03-15 12:39:02,088 ERROR: Exception on /translate [POST] [in /Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py:875])]
+Traceback (most recent call last):
+  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/venv/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/app/routes.py", line 202, in translate_text
+    return {'text': translate.translate(data['text'],
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/leosilva/development/microblog/app/translate.py", line 51, in translate
+    return result.json()
+           ^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'json'
+2025-03-15 12:39:21,288 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
+2025-03-15 12:39:22,108 INFO: Microblog startup [in /Users/leosilva/development/microblog/app/__init__.py:58])]
